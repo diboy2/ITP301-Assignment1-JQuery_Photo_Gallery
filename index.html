@@ -10,7 +10,6 @@
   	}
   	.thumb {
   		width:		100px;
-  		opacity: 	0.5;
   		margin:		5px;
       float: none;
   	}
@@ -20,27 +19,36 @@
 		text-align: center;
   	}
 
-    #thumbnail1, #thumbnail2{
+    #thumbnails1, #thumbnails2{
       text-align: center;
     }
 
     #main{
       width:600px;
     }
-
+	
+	.selected{
+		border-width: 2px;
+	}
 
   </style>
 
 	<script src="http://code.jquery.com/jquery-1.11.2.js"></script>
   <script>
-  	
+	// Jquery goes here
+  	$(function(){
+		$(".thumb").delay().fadeTo("4","0.5");
+		
+		
+	});
   </script>
+	
  </head>
  <body>
   <div id="container">
   	
-	<div id="thumbnail1">
-      <img src="images/disneyworld.jpg" id="thumb1" class="thumb" border="0">
+	<div id="thumbnails1">
+      <img src="images/disneyworld.jpg" id="thumb1" class="thumb selected" border="0" >
       <img src="images/las_vegas.jpg" id="thumb2" class="thumb" border="0">
       <img src="images/museum.jpg" id="thumb3" class="thumb" border="0">
     </div>
@@ -51,7 +59,7 @@
   			Las Vegas Sign
   		</div>
   	</div>
-	<div id="thumbnail2">
+	<div id="thumbnails2">
       <img src="images/new_york.jpg" id="thumb4" class="thumb" border="0">
       <img src="images/philippines.jpg" id="thumb5" class="thumb" border="0">
       <img src="images/yellowstone.jpg" id="thumb6" class="thumb" border="0">
