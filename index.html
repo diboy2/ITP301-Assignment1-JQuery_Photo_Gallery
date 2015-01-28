@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Family Vacations</title>
+  <style>
+  	#container {
+  		width:	710px;
+  		margin:	auto;
+      background-color: gray;
+  	}
+  	.thumb {
+  		width:		100px;
+  		opacity: 	0.5;
+  		margin:		5px;
+      float: none;
+  	}
+  	#caption {
+  		font-size:	14pt;
+  		margin:			10px;
+  	}
+
+    #sidebar{
+      float: left;
+      width: 110px;
+      
+    }
+    
+    #thumbnails{
+      text-align: left;
+    }
+
+    #main{
+      float: left;
+      width:600px;
+    }
+
+    .clearfloat{
+  clear: both;
+}
+
+  </style>
+
+	<script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+  <script>
+  	
+  </script>
+ </head>
+ <body>
+  <div id="container">
+  	
+    <div id="sidebar">
+    <img src="images/disneyworld.jpg" id="thumb1" class="thumb" border="2">
+      <img src="images/las_vegas.jpg" id="thumb2" class="thumb" border="0">
+      <img src="images/museum.jpg" id="thumb3" class="thumb" border="0">
+    </div>
+  	<div id="main">
+      
+    <div id="thumbnails">
+      <img src="images/disneyworld.jpg" id="thumb1" class="thumb" border="2">
+      <img src="images/las_vegas.jpg" id="thumb2" class="thumb" border="0">
+      <img src="images/museum.jpg" id="thumb3" class="thumb" border="0">
+    </div>
+      
+  		<img src="images/disneyworld.jpg" id="main-img">
+      <div class="clearfloat">
+      </div>
+  		<div id="caption">
+  			Las Vegas Sign
+  		</div>
+  	</div>
+    <div class="clearfloat">
+    </div>
+  </div>
+ </body>
+</html>
