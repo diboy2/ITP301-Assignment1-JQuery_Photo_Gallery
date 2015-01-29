@@ -4,11 +4,14 @@
   <meta charset="UTF-8">
   <title>Family Vacations</title>
   <style>
+    h2{
+    	text-align: center;
+    }
   	#container {
   		width:	600px;
   		margin:	auto;
   	}
-  	.thumb {
+  	#thumbnails1 img,#thumbnails2 img {
   		width:		100px;
   		margin:		5px;
       float: none;
@@ -37,32 +40,44 @@
   <script>
 	// Jquery goes here
   	$(function(){
-		$(".thumb").delay().fadeTo("4","0.5");
+		$("#thumbnails1 img, #thumbnails2 img").delay().fadeTo("4","0.5");
+		$("#thumbnails1 img, #thumbnails2 img").on("mouseenter", function(){
+			$(this).fadeTo("4","1.0");
+		}).on("mouseleave", function(){
+			$(this).fadeTo("4","0.5");
+		});
 		
-		
+		$("#thumbnails1 img, #thumbnails2 img").on("click", function(){
+			$("#thumbnails1 img, #thumbnails2 img").removeClass("selected");
+			$(this).addClass("selected");
+			$("#main-img").hide().attr("src", $(this).attr("src")).fadeIn();
+			$("#caption").html($(this).attr("alt"));
+			
+		});
 	});
   </script>
 	
  </head>
  <body>
+ 
   <div id="container">
-  	
+ 	<h2> Family Vacations </h2>
 	<div id="thumbnails1">
-      <img src="images/disneyworld.jpg" id="thumb1" class="thumb selected" border="0" >
-      <img src="images/las_vegas.jpg" id="thumb2" class="thumb" border="0">
-      <img src="images/museum.jpg" id="thumb3" class="thumb" border="0">
+      <img src="images/disneyworld.jpg" id="thumb1" class="selected" border="0" alt="Disneyworld" >
+      <img src="images/las_vegas.jpg" id="thumb2"  border="0" alt="Las Vegas">
+      <img src="images/museum.jpg" id="thumb3"  border="0" alt="National Museum of Natural History">
     </div>
   	<div id="main">
       
   		<img src="images/disneyworld.jpg" id="main-img">
   		<div id="caption">
-  			Las Vegas Sign
+  			Disneyworld
   		</div>
   	</div>
 	<div id="thumbnails2">
-      <img src="images/new_york.jpg" id="thumb4" class="thumb" border="0">
-      <img src="images/philippines.jpg" id="thumb5" class="thumb" border="0">
-      <img src="images/yellowstone.jpg" id="thumb6" class="thumb" border="0">
+      <img src="images/new_york.jpg" id="thumb4"  border="0" alt="New York">
+      <img src="images/philippines.jpg" id="thumb5"  border="0" alt="Philippines" >
+      <img src="images/yellowstone.jpg" id="thumb6"  border="0" alt="Yellowstone" >
     </div>
 	
   </div>
